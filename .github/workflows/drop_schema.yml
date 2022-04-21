@@ -9,6 +9,7 @@ jobs:
     container:
       image: python:3.8-slim
     steps:
+      - uses: actions/checkout@v2
       - env:
           BRANCH_NAME: ${{github.base_ref}}
         run: ./.github/workflows/drop_schema.sh
