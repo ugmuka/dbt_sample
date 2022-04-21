@@ -1,0 +1,14 @@
+name: drop_schema
+on: 
+  pull_request:
+    types: [closed]
+jobs:
+  drop-schema:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-20.04
+    container:
+      image: python:3.8-slim
+    steps:
+      - env:
+          BRANCH_NAME: ${{github.base_ref}}
+        run: ./.github/workflows/drop_schema.sh

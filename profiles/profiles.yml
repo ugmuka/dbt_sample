@@ -1,0 +1,17 @@
+dbt_sample:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      account: "{{ env_var('SNOWFLAKE_ACCOUNT') }}"
+
+      user: "{{ env_var('SNOWFLAKE_USERNAME') }}"
+      password: "{{ env_var('SNOWFLAKE_PASSWORD') }}"
+
+      role: DEVELOPER_ROLE
+      database: TEST_DB
+      warehouse: TEST_WH
+      schema: "{{ env_var('CURRENT_BRANCH') }}" # branch name
+      threads: 1
+      client_session_keep_alive: False
+      query_tag: DBT

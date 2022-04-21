@@ -1,0 +1,9 @@
+target/
+dbt_modules/
+logs/
+**/.DS_Store
+/venv
+.envrc
+profiles/.user.yml
+.env
+.bash_history
