@@ -11,7 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - env:
-          BRANCH_NAME: ${{github.base_ref}}
+          BRANCH_NAME: ${{github.head_ref}}
           SNOWSQL_ACCOUNT: ${{secrets.SNOWSQL_ACCOUNT}}
           SNOWSQL_USER: ${{secrets.SNOWSQL_USER}}
           SNOWSQL_DATABASE: ${{secrets.SNOWSQL_DATABASE}}
