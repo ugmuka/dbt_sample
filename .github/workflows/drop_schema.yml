@@ -12,4 +12,10 @@ jobs:
       - uses: actions/checkout@v2
       - env:
           BRANCH_NAME: ${{github.base_ref}}
+          SNOWSQL_ACCOUNT: ${{secrets.SNOWSQL_ACCOUNT}}
+          SNOWSQL_USER: ${{secrets.SNOWSQL_USER}}
+          SNOWSQL_DATABASE: ${{secrets.SNOWSQL_DATABASE}}
+          SNOWSQL_ROLE: ${{secrets.SNOWSQL_ROLE}}
+          SNOWSQL_WAREHOUSE: ${{secrets.SNOWSQL_WAREHOUSE}}
+          SNOWSQL_PWD: ${{secrets.SNOWSQL_PWD}}
         run: ./.github/workflows/drop_schema.sh
